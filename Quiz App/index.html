@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="content">
+            <h1>Country flags quiz</h1>
+            <h3>Choose the type of game</h3>
+            <form action="" id="form_typeGame">
+                <input type="radio" name="typeGame" id="typeOne">
+                <label for="typeOne">Flags Name</label>
+                <input type="radio" name="typeGame" id="typeTwo">
+                <label for="typeTwo">Name Flags</label>
+                <br>
+                <div id="question">
+
+                </div>
+                <div id="option">
+
+                </div>
+                <button id="check">Submit</button>
+                <div class="score"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        const Question_FlagsName = [{
+            q : "What is Name of this country ? ",
+            img : "Flags/",
+            a : [
+                { name : "Morroco", isCorrect : true},
+                { name : "Tunisia", isCorrect : false},
+                { name : "Turkie", isCorrect : false},
+                { name : "Algerie", isCorrect : false}
+        
+        ]
+        }, 
+
+        Question_FlagsName = {
+            q : "What is Name of this country ? ",
+            img : "Flags/",
+            a : [
+                { name : "cuba", isCorrect : true},
+                { name : "thailand", isCorrect : false},
+                { name : "norway", isCorrect : false},
+                { name : "nethrland", isCorrect : false}
+        ]
+        }, 
+
+        Question_FlagsName = {
+            q : "What is Name of this country ? ",
+            img : "Flags/",
+            a : [
+                { name : "peru", isCorrect : true},
+                { name : "philipins", isCorrect : false},
+                { name : "poland", isCorrect : false},
+                { name : "irelanda", isCorrect : false}
+        ]
+        }
+    ]
+
+    let currQuestion = 0
+    let  score = 0
+
+        function loadQues(){
+            const question = document.getElementById('question');
+            const option = document.getElementById('option');
+
+            question.textContent = Question_FlagsName[currQuestion].q;
+            option.innerHTML = "";
+
+            for(let i = 0; i<question[currQuestion].a.length; i++){
+                const choiceDiv = document.createElement('div');
+                const choice = document.createElement('input');
+                const choiceLabel = document.createElement('label');
+
+                choice.type = 'radio';
+                choice.name = 'answer' ; 
+                choice.value = i;
+
+                choiceLabel.textContent = Question_FlagsName[currQuestion].a[i].name;
+
+                choiceDiv.appendChild(choice);
+                choiceDiv.appendChild(choiceLabel);
+                option.appendChild(choiceDiv);
+
+            }
+        }
+
+        loadQues();
+
+        function loadScore() {
+            const totalScore = document.getElementById('score');
+            totalScore.textContent = `You scored ${} out of ${Question_FlagsName}`;
+
+        }
+
+        function nextQuestion() {
+            if (currQuestion < Question_FlagsName.length - 1){
+                currQuestion++;
+                loadQues();
+            }else{
+                document.getElementById('option').remove();
+                document.getElementById('question').remove();
+                document.getElementById('check').remove();
+                loadScore();
+            }
+        }
+
+        function checkAns() {
+            const selectdAns = parseInt(document.querySelector('input[name="answer"]:checked').value);
+
+            if(Question_FlagsName[currQuestion].a[selectdAns].isCorrect){
+                score++;
+                console.log('Correct');
+                nextQuestion();
+            }else{
+                nextQuestion();
+            }
+        }
+    </script>
+</body>
+</html>

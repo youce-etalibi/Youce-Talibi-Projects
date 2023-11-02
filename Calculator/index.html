@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid" id='container'>
+        <h1>Calculator</h1>
+        <span id="circle1"></span>
+        <span id="circle2"></span>
+        <div class="calculator">
+            <input type="text" name="showResultat" id="showResultat" value="0">
+            <div class="rowOne">
+                <input type="button" value="AC" id="AC">
+                <input type="button" value="DE" id="DE">
+                <input type="button" value="." id="point">
+                <input type="button" value="/" id="division">
+            </div>
+            <div class="rowTwo">
+                <input type="button" value="7" id="seven">
+                <input type="button" value="8" id="eight"">
+                <input type="button" value="9" id="nine">
+                <input type="button" value="×" id="multi">
+            </div>
+            <div class="rowTree">
+                <input type="button" value="4" id="four">
+                <input type="button" value="5" id="five">
+                <input type="button" value="6" id="six">
+                <input type="button" value="-" id="soubstraction">
+            </div>
+            <div class="rowTree">
+                <input type="button" value="1" id="one">
+                <input type="button" value="2" id="two">
+                <input type="button" value="3" id="tree">
+                <input type="button" value="+" id="addition">
+            </div>
+            <div class="rowFour">
+                <input type="button" value="00" id="doubleZero">
+                <input type="button" value="0" id="zero">
+                <input type="button" value="=" id="equal">
+            </div>
+        </div>
+    </div>
+    <script>
+        var equal = document.getElementById('equal');
+
+        var ac = document.getElementById('AC');
+        var de = document.getElementById('DE');
+        var point = document.getElementById('point');
+        var division = document.getElementById('division');
+        var multi = document.getElementById('multi');
+        var soubstraction = document.getElementById('soubstraction');
+        var addition = document.getElementById('addition');
+        
+        var seven = document.getElementById('seven');
+        var eight = document.getElementById('eight');
+        var nine = document.getElementById('nine');
+        var four = document.getElementById('four');
+        var five = document.getElementById('five');
+        var six = document.getElementById('six');
+        var one = document.getElementById('one');
+        var two = document.getElementById('two');
+        var tree = document.getElementById('tree');
+        var zero = document.getElementById('zero');
+        var doubleZero = document.getElementById('doubleZero');
+
+
+        seven.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "7"
+            }else{
+                var result = currentValue + "7"
+            }
+            valueRes.value = result;
+        }
+
+        zero.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+
+                var result = currentValue + "0"
+            
+            valueRes.value = result;
+        }
+        doubleZero.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+
+                var result = currentValue + "00"
+            
+            valueRes.value = result;
+        }
+
+        
+        eight.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "8"
+            }else{
+                var result = currentValue + "8"
+            }
+            valueRes.value = result;
+        }
+
+        nine.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "9"
+            }else{
+                var result = currentValue + "9"
+            }
+            valueRes.value = result;
+        }
+
+        four.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "4"
+            }else{
+                var result = currentValue + "4"
+            }
+            valueRes.value = result;
+        }
+
+        five.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "5"
+            }else{
+                var result = currentValue + "5"
+            }
+            valueRes.value = result;
+        }
+
+        six.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "6"
+            }else{
+                var result = currentValue + "6"
+            }
+            valueRes.value = result;
+        }
+
+        one.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "1"
+            }else{
+                var result = currentValue + "1"
+            }
+            valueRes.value = result;
+        }
+
+        two.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "2"
+            }else{
+                var result = currentValue + "2"
+            }
+            valueRes.value = result;
+        }
+
+        tree.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue == "0"){
+                var result =  "3"
+            }else{
+                var result = currentValue + "3"
+            }
+            valueRes.value = result;
+        }
+
+
+        ac.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var result ="0";
+            valueRes.value = result;
+        }
+        point.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue != "0"){
+                var result = currentValue + "."
+            }
+            valueRes.value = result;
+        }
+        division.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue != "0"){
+                var result = currentValue + "/"
+            }
+            valueRes.value = result;
+        }
+        multi.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue != "0"){
+                var result = currentValue + "*"
+            }
+            valueRes.value = result;
+        }
+        soubstraction.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue != "0"){
+                var result = currentValue + "-"
+            }
+            valueRes.value = result;
+        }
+        addition.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue != "0"){
+                var result = currentValue + "+"
+            }
+            valueRes.value = result;
+        }
+        de.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var currentValue = valueRes.value
+            if(currentValue.length > 0){
+                var result = currentValue.slice(0, -1)
+                valueRes.value = result;
+            }
+        }
+
+        equal.onclick = function() {
+            var valueRes = document.getElementById("showResultat");
+            var result = eval(valueRes.value);
+            valueRes.value = result;
+        }
+    </script>
+</body>
+</html>
